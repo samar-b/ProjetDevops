@@ -27,13 +27,13 @@ import java.util.List;
     OperateurServiceImpl operateurService;
 
 
-    Operateur op = Operateur.builder().nom("Eyaaaaaaaaaaaaaaa").prenom("Trifi").password("root").build();
+    Operateur op = Operateur.builder().nom("Belhadj").prenom("Samar").password("root").build();
     List<Operateur> listOperateurs = new ArrayList<Operateur>(){
         {
-            add(Operateur.builder().nom("Amina").prenom("Trifi").password("root").build());
-            add(Operateur.builder().nom("Amine").prenom("Trifi").password("root").build());
-            add(Operateur.builder().nom("Noura").prenom("Trifi").password("root").build());
-            add(Operateur.builder().nom("Lassaad").prenom("Trifi").password("root").build());
+            add(Operateur.builder().nom("Belhadj").prenom("SAM").password("root").build());
+            add(Operateur.builder().nom("Belhadj").prenom("SIM").password("root").build());
+            add(Operateur.builder().nom("Belhadj").prenom("LAM").password("root").build());
+            add(Operateur.builder().nom("Belhadj").prenom("SIN").password("root").build());
 
         }
 
@@ -65,7 +65,7 @@ import java.util.List;
 
     @Test
      void tesupdateOperateur() {
-        op.setPrenom("Hamdi");
+        op.setPrenom("zed");
         Mockito.when(operateurRepositoryMock.save(op)).thenReturn(op);
         Operateur op1 = operateurService.updateOperateur(op);
         Assertions.assertEquals(op.getPrenom(),op1.getPrenom());
@@ -74,7 +74,7 @@ import java.util.List;
 
     @Test
      void testdeleteOperateur() {
-        Operateur op2 = Operateur.builder().nom("Miral").prenom("Trifi").password("root").build();
+        Operateur op2 = Operateur.builder().nom("Belhadj").prenom("SIN").password("root").build();
         operateurService.deleteOperateur(op2.getIdOperateur());
         Mockito.verify(operateurRepositoryMock).deleteById(op2.getIdOperateur());
 
